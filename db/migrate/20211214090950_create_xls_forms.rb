@@ -4,7 +4,8 @@ class CreateXlsForms < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :email
       t.string :file_name
-
+      t.datetime :created
+      # вроде у них user_id должен появиться
       t.timestamps
     end
   end
