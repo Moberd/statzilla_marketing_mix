@@ -2,6 +2,10 @@
 <img src="https://static.tildacdn.com/tild3732-3138-4964-a364-343132646633/logo200.png">
 <%= form_with model:@xls_form do |f| %>
   <div class='form_group'>
+    <%= f.text_field :name, required: true%>
+  </div>
+
+  <div class='form_group'>
     <%= f.text_field :email, required: true%>
   </div>
 
