@@ -5,27 +5,23 @@ class XlsFormsController < ApplicationController
   end
 
   def create
-    params_ = xls_form_params
     @user = User.find_or_create_by(user_params)
-    # @usr = User.find_by_email(:email)
-    # @user.name = params_["name"]
-
     @user.save
     @xls_form = @user.xls_forms.create(xls_form_params)
     if @xls_form.errors.empty?
-      res_file = calculate_file @user.email 
+      res_file = calculate_file @user.email
       if res_file
         @xls_form.file_name = res_file
         @xls_form.save
         redirect_to controller: 'calc_results', calc_results: res_file
       else
-        redirect_to error
+        render 'xls_forms/error'
       end
     end
   end
 
   def error
-    render "что то не так сделал"
+
   end
 
   def calculate_file(user_email)
