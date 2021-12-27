@@ -20,16 +20,17 @@ class XlsFormsController < ApplicationController
     end
   end
 
-  def error
-
-  end
+  def error; end
 
   def calculate_file(user_email)
     path = ActiveStorage::Blob.service.send(:path_for, @xls_form.file.key)
     ts = Time.now.to_i
-    flag = system " python #{Rails.root.to_s}/bin/market_mix_script.py #{path} #{user_email} #{ts} #{Rails.root.to_s}"
-    if flag
-      "#{user_email}.#{ts}.csv"
+    file_extension = File.extname(@xls_form.file.filename.to_s)
+    if ['.csv', '.xls', '.xlsx'].include?(file_extension)
+      flag = system " python #{Rails.root.to_s}/bin/market_mix_script.py #{path} #{user_email} #{ts} #{Rails.root.to_s} #{file_extension}"
+      if flag
+        "#{user_email}.#{ts}.pdf"
+      end
     end
   end
 

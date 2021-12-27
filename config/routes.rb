@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   resources :xls_forms
   resources :calc_results
   get 'calc_results/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
