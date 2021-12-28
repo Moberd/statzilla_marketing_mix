@@ -32,7 +32,7 @@ jobs:
       - name: webpacker install
         run: bundle exec rails webpacker:install
       - name: zip
-        run:  zip -r * app.zip
+        run:  zip -r app.zip .
       - name: archive for prod
         uses: actions/upload-artifact@v2
         with:
@@ -44,13 +44,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: install ssh sshpass 
+        uses: matheusvanzan/sshpass-action@v1
+        with:
+          host: 188.120.240.141
+          username: root
+          password: ${{secrets.SERVER_PASSWORD}}
         run: |
-         apk add openssh-client
-         apk add sshpass
-      - name: scp to server
-        run: sshpass -p {{secrets.SERVER_PASSWORD}} scp root@188.120.240.141:/root/statzilla_mm_app
-      - name: ssh run deploy
-        run: sshpass -p {{secrets.SERVER_PASSWORD}} ssh root@188.120.240.141 "statzilla_mm_app./deploy.bash"
+          scp root@188.120.240.141:/root/statzilla_mm_app
+          ssh root@188.120.240.141 "statzilla_mm_app./deploy.bash"
    
        
 
