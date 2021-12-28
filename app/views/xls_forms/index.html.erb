@@ -1,20 +1,212 @@
-<h1>Statzilla Marketing Mix</h1>
-<img src="https://static.tildacdn.com/tild3732-3138-4964-a364-343132646633/logo200.png">
-<%= form_with model:@xls_form do |f| %>
-  <div class='form_group'>
-    <%= f.text_field :name, required: true%>
-  </div>
+<!DOCTYPE html>
+<html>
+<html class="no-js" lang="">
 
-  <div class='form_group'>
-    <%= f.text_field :email, required: true%>
-  </div>
+<head>
+  <meta charset="utf-8"/>
+  <title>Statzilla</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,300" type="text/css">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ActiveBox</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="stylesheet" href=<%=asset_path('bootstrap.min.css') %>
+  <link rel="stylesheet" href=<%=asset_path('flexslider.css') %>
+  <link rel="stylesheet" href=<%=asset_path('jquery.fancybox.css') %>
+  <link rel="stylesheet" href<%=asset_path('styles.css') %>
+  <link rel="stylesheet" href=<%=asset_path('responsive.css') %>
+  <link rel="stylesheet" href=<%=asset_path('animate.min.css') %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
 
-  <div class='form_group'>
-    <%= f.file_field :file, class: 'file_input', required: true%>
+<body>
+<!--  <div id="wrapper">
+    <header>
+       <a href="/"><img src="images/logo200.png" alt="Statzilla logo"></a>
+         <div class="box" id="wrapper">
+                <a href="/"><img src="images/facebook.png" alt="facebook logo"></a>
+                <a href="/"></a><img src="images/instagram.png" alt="instagram logo"></a>
+                <a href="/"></a><img src="images/vk.png" alt = "vk logo"></a>
+        </div>
+        <div class="wrap">
+            <div class="header">
+                <div class="logo">
+                    <a href=""><img src="logo.png" alt="" /></a>
+                </div>
+                <div class="nav">
+                    <div class="positioned">
+                        <ul>
+                            <li><img src="images/facebook.png" alt="facebook logo"></li>
+                            <li><img src="images/instagram.png" alt="instagram logo"></li>
+                            <li><img src="images/vk.png" alt="vk logo"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear"></div> /* отмена обтекания */
+            </div>
+        </div>
+    </header>
+    <nav></nav>
+    <div id="heading"></div>
+    <aside></aside>
+    <section></section>
+</div> -->
+<section class="banner" role="banner">
+  <header id="header">
+    <div class="header-content clearfix">
+      <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+      <nav class="navigation" role="navigation">
+        <ul class="primary-nav">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#teams">Our Team</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="nav-toggle">Menu<span></span></a>
+    </div>
+    <!-- header content -->
+  </header>
+  <!-- header -->
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="banner-text text-center">
+        <h1>Marketing mix</h1>
+        <p>Быстро. Доступно. Эффективно.</p>
+      </div>
+      <!-- banner text -->
+    </div>
   </div>
-
-  <div class="form_group">
-    <%= f.submit %>
+</section>
+<!-- banner -->
+<section id="features" class="features section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 feature text-center">
+        <span class="icon icon-tools"></span>
+        <div class="feature-content">
+          <h5>Easily Customised</h5>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel
+            eu leo. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 feature text-center">
+        <span class="icon icon-desktop"></span>
+        <div class="feature-content">
+          <h5>Responsive Ready</h5>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel
+            eu leo. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 feature text-center">
+        <span class="icon icon-lightbulb"></span>
+        <div class="feature-content">
+          <h5>Modern Design</h5>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel
+            eu leo. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 feature text-center">
+        <span class="icon icon-genius"></span>
+        <div class="feature-content">
+          <h5>Clean Code</h5>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel
+            eu leo. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 feature text-center">
+        <span class="icon icon-briefcase"></span>
+        <div class="feature-content">
+          <h5>Ready to Ship</h5>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel
+            eu leo. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 feature text-center">
+        <span class="icon icon-download"></span>
+        <div class="feature-content">
+          <h5>Download for Free</h5>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel
+            eu leo. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
+<!-- features -->
+<section id="download" class="section download">
+  <div class="wrapper">
+    <div class="col-md-8 col-md-offset-2 text-center">
+      <p>
+      <div class="left_block">
+        <%= form_with model: @xls_form do |f| %>
+          <div class='form_group'>
+            <%= f.text_field :name, required: true %>
+          </div>
 
-<%end%>
+          <div class='form_group'>
+            <%= f.text_field :email, required: true %>
+          </div>
+
+          <div class='form_group'>
+            <%= f.file_field :file, class: 'file_input', required: true %>
+          </div>
+
+          <div class="form_group">
+            <%= f.submit %>
+          </div>
+
+        <% end %>
+
+      </div>
+      <!--<form action="example-server.com">
+      <fieldset>
+          <legend>Contact me</legend>
+          <div class="form-control">
+              <label for="name">Name</label>
+              <input type="name" id="name" placeholder="Enter your name" required />
+          </div>
+          <div class="form-control">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Enter your email" required />
+          </div>
+
+      </fieldset>-->
+      </form>
+      <!--<fieldset>
+      <legend>Контактная информация</legend>
+      <label>Имя <input type="text" required></label>
+      <label>E-mail <input type="email" required></label>
+  </fieldset>
+  <p>Fusce dapibus, tellus ac cursus commodo</p>-->
+      <div class="right_block">
+        <form id="upload-container" method="POST" action="send.php">
+          <img id="upload-image" src="upload.png">
+          <div>
+            <input id="file-input" type="file" name="file" multiple>
+            <label for="file-input">Выберите файл</label>
+            <span>или перетащите его сюда</span>
+          </div>
+        </form>
+      </div>
+      </p>
+      <!--<a href="https://github.com/kamalcha/ActiveBox/archive/master.zip" class="btn btn-large">Download for Free</a>-->
+    </div>
+  </div>
+</section>
+<!-- download -->
+<footer></footer>
+</body>
+
+</html>

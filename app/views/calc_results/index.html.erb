@@ -1,9 +1,269 @@
-<html>
-  <h1>Statzilla Marketing Mix</h1>
-  <body>
-  <div>
-    <img src="https://thumb.tildacdn.com/tild6635-3230-4934-a437-363062353466/-/resize/240x/-/format/webp/_.png">
-    <%= File.read(@data) %>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ваш анализ готов</title>
+  <div style="background-image: url(<%=asset_path('background_dop.png') %>);")></div>>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="fav.png">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
+    <style>
+
+    </style>
+    </head>
+
+<body>
+
+
+<div class=" uk-flex-auto " data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 300">
+  <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle uk-invisible animate" uk-grid data-uk-margin data-uk-scrollspy-class="uk-animation-fade uk-invisible">
+
+    <div>
+      <object data=<%=asset_path('testpdf.pdf') %> type="application/pdf" width="100%" uk-height-viewport="offset-bottom: 0px" style="margin-bottom: -6px">
+        <!--@pdf_path-->
+        <p>Упс! Что-то пошло не так! и нам не удалось сформировать отчет, напишите нам на mail@statzilla.ru мы обязательно вам поможем.</p>
+      </object>
+    </div>
+    <div class="uk-flex uk-flex-column uk-flex-between" uk-height-viewport>
+      <!-- NAV -->
+      <div>
+        <nav class="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
+          <div class="uk-navbar-left">
+            <div class="uk-navbar-item uk-margin-left">
+              <a class="uk-logo" href="/">
+                <img style="height: 50px; " src=<%=asset_path('logo.png') %>>
+              </a>
+            </div>
+            <!--<ul class="uk-navbar-nav">
+                <li><a class="uk-logo" uk-toggle="target: #modal-company" href="#">О компании</a></li>
+                <li><a class="uk-logo" uk-toggle="target: #modal-contacts" href="#">Контакты</a></li>
+            </ul>-->
+          </div>
+          <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+              <!-- <?php if(isset($_SESSION['analysis_id'])):?>
+              <li class="uk-visible@s">
+                  <a href="analysis_free_result.php?analysis_id=<?php echo $analysis_id?>">
+                      <?php echo 'ID вашего анализа: '.$analysis_id?>
+                  </a>
+              </li>
+              <?php endif;?>
+              <li><a class="uk-navbar-toggle" data-uk-toggle href="#offcanvas-nav">MENU</a></li>-->
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <section class="main">
+        <div class="uk-margin-auto uk-margin">
+          <div class="uk-padding uk-padding-remove-vertical">
+            <div class="uk-tile uk-tile-muted uk-padding-small">
+              <h1 class="title">Ваш анализ готов!</h1>
+              <p class="uk-text">Ознакомьтесь с бесплатной версией отчета (слева). Его можно скачать или сразу распечатать прямо здесь. </p>
+              <p class="uk-text">Хочешь знать больше? Оплати и скачай полную версию отчета, она включает:</p>
+              <div class="uk-panel">
+                <!--<a href="#" class="uk-link-reset uk-margin-auto" uk-toggle="target: #modal-example1">
+            <div class="uk-card uk-card-small  uk-card-small uk-card-default uk-card-hover uk-card-body uk-align-left uk-margin-remove-adjacent">
+                <div class="uk-inline-clip">
+                    <img src="word.png" style="height: 70px; "><br>
+                    <span>docx файл</span>
+                </div>
+            </div>
+        </a>-->
+                <p class="uk-text-uppercase uk-margin-remove-top">ПОЛНЫЙ ОТЧЕТ О ТОВАРАХ, КОТОРЫЙ СОДЕРЖИТ</p>
+                <p class="">- Анализ продаж и сезонности<br>- Всю информацию о каждой категории товаров в редактируемом формате<br>- Рекомендации по увеличению продаж</p>
+              </div>
+              <div class="uk-panel">
+                <!--<a href="#" class="uk-link-reset uk-margin-auto" uk-toggle="target: #modal-example2">
+            <div class="uk-card uk-card-small  uk-card-small uk-card-default uk-card-hover uk-card-body uk-align-left uk-margin-remove-adjacent">
+                <div class="uk-inline-clip">
+                    <img src="excel.png" style="height: 70px;"><br>
+                    <span>XL файл</span>
+                </div>
+            </div>
+        </a>-->
+                <p class="uk-text-uppercase uk-margin-remove-top">ТАБЛИЦА С РАЗМЕЧЕННЫМИ ТОВАРАМИ В СООТВЕТСТВИИ С ИХ КАТЕГОРИЯМИ ПОЗВОЛИТ</p>
+                <p class="">- Оптимизировать товарную линейку, разгрузив склад<br>- Понять, какие товары нужно рекламировать<br>- Впечатлить начальника</p>
+
+              </div>
+              <div class="uk-margin-top">
+                <!--<div class="uk-child-width-1-2@s uk-grid-collapse uk-margin-top" uk-grid>-->
+                <div>
+                  <div class="uk-tile uk-tile-muted uk-padding-small">
+                    <p class="uk-text-uppercase uk-text-center">Полный анализ <span class="uk-text-bold"><?php echo $price ?></span> рублей</p>
+                    <p class="uk-text-center"><a href="#pay_modal" uk-toggle class="uk-button uk-button-secondary ">купить</a></p>
+                  </div>
+                </div>
+                <!--<div>
+<div class="uk-tile uk-tile-default uk-padding-small">
+<p class="uk-text-small ">
+<a class="uk-link-muted" uk-toggle="target: #modal-info1">Так дорого, а сколько это обычно стоит?</a><br>
+<a class="uk-link-muted" uk-toggle="target: #modal-info2">А что если меня не устроит результат?</a><br>
+<a class="uk-link-muted" uk-toggle="target: #modal-example">Могу ли я купить потом?</a>
+</p>
+</div>
+</div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>>
+      <div class="uk-text-center">
+        <span class="uk-text-small uk-text-muted uk-text-center">© 2015-2019 | <a class="uk-link-muted" href="http://statzilla.ru" target="_blank">Created by StatZilla</a></span>
+      </div>
+    </div>
   </div>
-  </body>
+
+  <!-- /FOOT -->
+</div>
+<!-- OFFCANVAS -->
+<!-- <div id="offcanvas-nav" data-uk-offcanvas="flip: true; overlay: false">
+    <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
+        <button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
+        <p> <a href="#">FAQ?</a> </p>
+        <p> <a href="#">Найти анализ по номеру </a></p>
+        <p> <a href="#">Помощь при анализе</a> </p>
+        <p> .... </p>
+
+
+    </div>
+</div>-->
+<!-- /OFFCANVAS -->
+<div uk-modal class="uk-flex-top" id="pay_modal">
+  <div class="uk-modal-dialog  uk-margin-auto-vertical uk-text-center">
+    <button class="uk-modal-close-outside" type="button" uk-close></button>
+    <div class="uk-modal-body">
+      <p class="uk-margin">Введи адрес электронной почты, чтобы мы могли отправить тебе файлы полного отчета, а также чек о покупке</p>
+      <form id="pay_form" method="post" action="#" class="uk-margin">
+        <fieldset class="uk-fieldset">
+          <div>
+
+            <div class="uk-flex  uk-flex-center ">
+              <div class="uk-width-1-2@s ">
+                <input class="uk-input uk-margin" type="text" name="email" value="" placeholder="E-mail" required>
+                <a class="uk-button uk-button-primary uk-width-1-1 " id="pay_form_button" onclick="myFunction()">Продолжить</a>
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="uk-modal-footer">
+                <span class="uk-text-small uk-text-meta">для совершения оплаты вы будете перенаправлены на сервис <br>
+                                            <img class="" src="https://auth.robokassa.ru/Merchant/PaymentForm/Images/logo-l.png">
+                                        </span>
+    </div>
+  </div>
+</div>
+
+<!-- modal with info -->
+<div id="modal-info1" uk-modal class="">
+  <div class="uk-modal-dialog uk-modal-body ">
+    <p class="uk-h2 uk-modal-title">Серьезно?</p>
+    <p>Ты действительно нажал на этот вопрос? Шанс увеличить продажи по цене ужина в ресторане и ты по-прежнему считаешь, что это дорого?</p>
+    <p class="uk-text-right">
+      <a class="uk-button uk-button-text uk-modal-close uk-margin-right" type="button">Ок, понятно</a>
+    </p>
+  </div>
+</div>
+<div id="modal-info2" uk-modal class="">
+  <div class="uk-modal-dialog uk-modal-body ">
+    <p class="uk-h2 uk-modal-title">C'est la vie</p>
+    <p>Наш анализ покажет объективную картину, если она тебя не устраивает - пора что-то менять в бизнесе! А если у тебя возникнут вопросы к отчету, мы с радостью ответим на них, пиши на mail@statzilla.ru</p>
+    <p class="uk-text-right">
+      <a class="uk-button uk-button-text uk-modal-close uk-margin-right" type="button">Ок, понятно</a>
+    </p>
+  </div>
+</div>
+<div id="modal-example1" uk-modal class="">
+  <div class="uk-modal-dialog uk-modal-body ">
+    <p class="uk-h2 uk-modal-title">Файл входит в полный отчет</p>
+    <p>Проинвестируй 1499 рублей в увеличение своих продаж и получи этот и эксель файл на почту</p>
+    <p class="uk-text-right">
+      <a class="uk-button uk-button-text uk-modal-close uk-margin-right" type="button">Ок, понятно</a>
+      <a class="uk-button uk-button-primary uk-modal-close " uk-toggle="target: #pay_modal">Купить</a>
+    </p>
+  </div>
+</div>
+<div id="modal-example2" uk-modal class="">
+  <div class="uk-modal-dialog uk-modal-body ">
+    <p class="uk-h2 uk-modal-title">Файл входит в полный отчет</p>
+    <p>Проинвестируй 1499 рублей в увеличение своих продаж и получи этот и док файл на почту</p>
+    <p class="uk-text-right">
+      <a class="uk-button uk-button-text uk-modal-close uk-margin-right" type="button">Ок, понятно</a>
+      <a class="uk-button uk-button-primary uk-modal-close " uk-toggle="target: #pay_modal">Купить</a>
+    </p>
+  </div>
+</div>
+<div id="modal-company" uk-modal class="">
+  <div class="uk-modal-dialog uk-modal-body ">
+    <p class="uk-modal-title">О компании</p>
+    <p class="uk-margin">SaleSan является брендом компания <a href="http://statzilla.ru" target="_blank">Statzilla. </a> <br>Компания на рынке уже более 7 лет.
+      <br>Наши компетенции: статистическая обработка, аналитика данных и прогнозирование - обрабатываем ваши данные и превращаем числа в инструменты. Наш опыт и интересные кейсы позволили нам внедрить инновационный продукт abcxyz - анализ
+    </p>
+    <p class="uk-text-right">
+      <a class="uk-button uk-button-primary uk-modal-close uk-margin-right" type="button">Понятно</a>
+    </p>
+  </div>
+</div>
+<div id="modal-contacts" uk-modal class="">
+  <div class="uk-modal-dialog uk-modal-body ">
+    <p class="uk-modal-title">Контакты</p>
+    <p class="uk-margin">
+      Фактический адрес: г. Ростов-на-Дону, ул. М.Горького 151, 4 этаж
+      <br>Контактный телефон: 89662060058
+      <br>Электронная почта: aeo@statzilla.ru
+    </p>
+    <hr>
+    <p class="uk-margin uk-text-muted uk-text-small">
+      Реквизиты:<br> ИП Власенко Е.А.
+      <br>ИНН 616484815767
+      <br>Адрес: 344002, Ростовская обл., г. Ростов-на-Дону, ул. Пушкинская, д. 79, кв. 6.
+      <br>Свидетельство о гос. регистрации № 61007793874
+
+    </p>
+    <p class="uk-text-right">
+      <a class="uk-button uk-button-primary uk-modal-close uk-margin-right" type="button">Понятно</a>
+    </p>
+  </div>
+</div>
+<!-- UIkit JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    function myFunction() {
+        var string = $("#pay_form").serialize();
+        $.post('user_data.php', string, function(html) {
+            window.location = "https://auth.robokassa.ru/Merchant/Index.aspx?MerchantLogin=business_statzilla&InvId=<?php echo $analysis_id ?>&Culture=ru&Encoding=utf-8&Description=покупка анализа&OutSum=<?php echo $price ?>&SignatureValue=<?php echo $signature ?>&IncCurrLabel=BankCard&" + string + "&IsTest=0"
+        });
+    };
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m, e, t, r, i, k, a) {
+        m[i] = m[i] || function() {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        m[i].l = 1 * new Date();
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(56802751, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+    });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/56802751" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+
 </html>

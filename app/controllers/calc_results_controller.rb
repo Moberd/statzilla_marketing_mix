@@ -4,5 +4,5 @@ class CalcResultsController < ApplicationController
     if params[:calc_results]
       @pdf_path = params[:calc_results]
     end
-    end
+  end
 end
