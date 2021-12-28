@@ -6,7 +6,7 @@
   <meta charset="utf-8"/>
   <title>Statzilla</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <link rel="stylesheet" href="css/styles.css" type="text/css">
+  <link rel="stylesheet" href=<%=asset_path('styles.css') %> type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,300" type="text/css">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,12 +16,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="stylesheet" href=<%=asset_path('bootstrap.min.css') %>
-  <link rel="stylesheet" href=<%=asset_path('flexslider.css') %>
-  <link rel="stylesheet" href=<%=asset_path('jquery.fancybox.css') %>
-  <link rel="stylesheet" href<%=asset_path('styles.css') %>
-  <link rel="stylesheet" href=<%=asset_path('responsive.css') %>
-  <link rel="stylesheet" href=<%=asset_path('animate.min.css') %>
+  <link rel="stylesheet" href=<%=asset_path('bootstrap.min.css') %>>
+  <link rel="stylesheet" href=<%=asset_path('flexslider.css') %>>
+  <link rel="stylesheet" href=<%=asset_path('jquery.fancybox.css') %>>
+  <link rel="stylesheet" href<%=asset_path('styles.css') %>>
+  <link rel="stylesheet" href=<%=asset_path('responsive.css') %>>
+  <link rel="stylesheet" href=<%=asset_path('animate.min.css') %>>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="script.js"></script>
@@ -65,7 +65,7 @@
 <section class="banner" role="banner">
   <header id="header">
     <div class="header-content clearfix">
-      <a class="logo" href="#"><img src="images/logo.png" alt=""></a>
+      <a class="logo" href="#"><img src=<%=asset_path("logo.png") %> alt=""></a>
       <nav class="navigation" role="navigation">
         <ul class="primary-nav">
           <li><a href="#features">Features</a></li>
@@ -190,9 +190,9 @@
       <label>E-mail <input type="email" required></label>
   </fieldset>
   <p>Fusce dapibus, tellus ac cursus commodo</p>-->
-      <div class="right_block">
+      <!--<div class="right_block">
         <form id="upload-container" method="POST" action="send.php">
-          <img id="upload-image" src="upload.png">
+          <img id="upload-image" src=>
           <div>
             <input id="file-input" type="file" name="file" multiple>
             <label for="file-input">Выберите файл</label>
@@ -201,6 +201,7 @@
         </form>
       </div>
       </p>
+      -->
       <!--<a href="https://github.com/kamalcha/ActiveBox/archive/master.zip" class="btn btn-large">Download for Free</a>-->
     </div>
   </div>

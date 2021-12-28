@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ваш анализ готов</title>
-  <div style="background-image: url(<%=asset_path('background_dop.png') %>);")></div>>
+  <div style="background-image: url(<%=asset_path('background_dop.png') %>);")>>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
@@ -23,7 +23,7 @@
   <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle uk-invisible animate" uk-grid data-uk-margin data-uk-scrollspy-class="uk-animation-fade uk-invisible">
 
     <div>
-      <object data=<%=asset_path('testpdf.pdf') %> type="application/pdf" width="100%" uk-height-viewport="offset-bottom: 0px" style="margin-bottom: -6px">
+      <object data=<%=asset_path(@pdf_path) %> type="application/pdf" width="100%" uk-height-viewport="offset-bottom: 0px" style="margin-bottom: -6px">
         <!--@pdf_path-->
         <p>Упс! Что-то пошло не так! и нам не удалось сформировать отчет, напишите нам на mail@statzilla.ru мы обязательно вам поможем.</p>
       </object>
