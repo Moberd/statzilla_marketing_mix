@@ -22,6 +22,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
+      - name: test
+        run: echo ${{secrets.TEST}}
       - name: setup_ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -48,7 +50,7 @@ jobs:
         with:
           host: 188.120.240.141
           username: root
-          password: ${{secrets.SERVER_PASSWORD}}
+          key: ${{secrets.SERVER_PASSWORD}}
           source: app.zip
           target: /root/statzilla_mm_app
       - name: ssh
@@ -56,7 +58,7 @@ jobs:
         with:
           host: 188.120.240.141
           username: root
-          password: ${{secrets.SERVER_PASSWORD}}
+          key: ${{secrets.SERVER_PASSWORD}}
           script: statzilla_mm_app./deploy.bash
       
    
