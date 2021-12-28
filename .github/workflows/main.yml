@@ -32,7 +32,7 @@ jobs:
       - name: webpacker install
         run: bundle exec rails webpacker:install
       - name: zip
-        run:  zip -r app.zip
+        run:  zip -r * statzilla_marketing_mix.zip
       - name: test
         run: bundle exec rake
       - name: archive for prod
