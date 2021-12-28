@@ -54,7 +54,7 @@ jobs:
         with:
           name: ruby_server
       - name: test download
-        run: ls to_server
+        run: (ls app.zip && echo yes) || echo no
       - name: scp
         uses: appleboy/scp-action@master
         env:
@@ -62,7 +62,7 @@ jobs:
           USERNAME: root
           PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         with:
-          source: to_server/*
+          source: app.zip
           target: /root/statzilla_mm_app
       - name: ssh
         uses: appleboy/ssh-action@master
