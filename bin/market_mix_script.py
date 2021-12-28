@@ -15,5 +15,5 @@ if __name__ == "__main__":
     pdf.add_page()
     pdf.set_font("Arial", size=12)
     pdf.cell(200, 10, txt=res, ln=1, align="C")
-    pdf.output(f"{sys.argv[4]}/storage/results/{sys.argv[2]}.{sys.argv[3]}.pdf")
+    pdf.output(f"{sys.argv[4]}/app/assets/pdf_results/{sys.argv[2]}.{sys.argv[3]}.pdf")
     print(f"{sys.argv[2]}.{sys.argv[3]}.pdf analytics calculated")
