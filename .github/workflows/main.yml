@@ -26,12 +26,14 @@ jobs:
         with:
           ruby-version: 3.0.2
           bundler-cache: true
-      - name: build
-        run: |
-          bundle install
-          bundle exec rails db:migrate
-          bundle exec rails webpacker:install
-          zip -r app.zip
+      - name: bundle install
+        run: bundle install
+      - name: migrate db
+        run: bundle exec rails db:migrate
+      - name: webpacker install
+        run: bundle exec rails webpacker:install
+      - name: zip
+        run:  zip -r app.zip
       - name: test
         run: bundle exec rake
       - name: archive for prod
