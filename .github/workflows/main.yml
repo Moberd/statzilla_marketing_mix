@@ -50,7 +50,7 @@ jobs:
         with:
           host: 188.120.240.141
           username: root
-          key: ${{secrets.SERVER_PASSWORD}}
+          key: ${{ secrets.SERVER_PASSWORD }}
           source: app.zip
           target: /root/statzilla_mm_app
       - name: ssh
@@ -58,7 +58,7 @@ jobs:
         with:
           host: 188.120.240.141
           username: root
-          key: ${{secrets.SERVER_PASSWORD}}
+          key: ${{ secrets.SERVER_PASSWORD }}
           script: statzilla_mm_app./deploy.bash
       
    
