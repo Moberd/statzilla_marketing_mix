@@ -32,15 +32,25 @@ jobs:
       - name: webpacker install
         run: bundle exec rails webpacker:install
       - name: zip
-        run:  zip -r * statzilla_marketing_mix.zip
+        run:  zip -r * app.zip
       - name: test
-        run: bundle exec rake
+        run: |
+          bundle exec rails db:migrate RAILS_ENV=test
+          bundle exec rake
       - name: archive for prod
         uses: actions/upload-artifact@v2
         with:
          path: app.zip
-      - name: check exists
-        run: echo -f app.zip
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install sshpass
+      - run: apt install sshpass
+      - name: scp to server
+      - run: sshpass -p {{secrets.SERVER_PASSWORD}} scp root@188.120.240.141:/root/statzilla_mm_app
+      - name: ssh run deploy
+      - run: sshpass -p {{secrets.SERVER_PASSWORD}} ssh root@188.120.240.141 "statzilla_mm_app./deploy.bash"
    
        
 
