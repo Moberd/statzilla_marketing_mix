@@ -28,6 +28,8 @@ jobs:
           bundler-cache: true
       - name: build
         run: |
-          ls
+          "
+          ls -la
           ruby -v
+          "
         
