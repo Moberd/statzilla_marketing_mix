@@ -54,7 +54,7 @@ jobs:
         with:
           name: ruby_server
       - name: test download
-        run: ls /home/runner/work/statzilla_marketing_mix/statzilla_marketing_mix/to_server
+        run: ls to_server
       - name: scp
         uses: appleboy/scp-action@master
         env:
@@ -62,7 +62,7 @@ jobs:
           USERNAME: root
           PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         with:
-          source: /home/runner/work/statzilla_marketing_mix/statzilla_marketing_mix/to_server/*
+          source: to_server/*
           target: /root/statzilla_mm_app
       - name: ssh
         uses: appleboy/ssh-action@master
