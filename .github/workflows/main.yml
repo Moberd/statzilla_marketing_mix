@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: test
-        run: echo "HELLO"
+        run: echo ${{ secrets.TEST }}
       - name: setup_ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -52,7 +52,7 @@ jobs:
         env:
           HOST: 188.120.240.141
           USERNAME: root
-          KEY: ${{ secrets.SERVER_PASSWORD }}
+          PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         with:
           source: app/*
           target: /root/statzilla_mm_app
@@ -61,7 +61,7 @@ jobs:
         env:
           HOST: 188.120.240.141
           USERNAME: root
-          KEY: ${{ secrets.SERVER_PASSWORD }}
+          PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         with:
           script: statzilla_mm_app./deploy.bash
       
