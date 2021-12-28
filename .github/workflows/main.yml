@@ -34,13 +34,13 @@ jobs:
       - name: webpacker install
         run: bundle exec rails webpacker:install
       - name: dir_fix
-        run: mkdir app 
+        run: mkdir to_server 
       - name: zip
         run:  zip -r app/app.zip .
       - name: archive for prod
         uses: actions/upload-artifact@v2
         with:
-         path: app/app.zip
+         path: to_server/app.zip
 
   deploy:
     runs-on: ubuntu-latest
