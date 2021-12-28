@@ -28,7 +28,7 @@ jobs:
           bundler-cache: true
       - name: build
         run: |
-          bundler install
+          bundle install
           bundle exec rails db:migrate
           bundle exec rails webpacker:install
           zip -r app.zip
