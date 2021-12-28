@@ -27,9 +27,6 @@ jobs:
           ruby-version: 3.0.2
           bundler-cache: true
       - name: build
-        run: |
-          "
-          ls -la
-          ruby -v
-          "
+        run: ls
+
         
