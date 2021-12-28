@@ -8,11 +8,15 @@ class SomeIntegrationTest < ActionDispatch::IntegrationTest
   end
 
   test "Default params pass" do
-    get xls_forms_index_path, params: {
-      name: 'alexey',
-      email: 'alexey@gmail.com',
-      file: File.open("#{Rails.root.to_s}/storage/testfile.csv")
-    }
-    assert_response :success
+    #post "/xls_forms", params: {
+    #  xls_form: {
+    #    name: 'alexey',
+    #    email: 'alexey@gmail.com',
+    #    file: File.new("#{Rails.root.to_s}/storage/testfile.csv")
+    #  }
+    #}
+    #follow_redirect!
+    #assert_response :success
+    assert false, "все работает, тест - нет"
   end
 end
