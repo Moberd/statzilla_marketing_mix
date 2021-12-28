@@ -39,7 +39,7 @@ jobs:
          path: app.zip
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubunt-latest
     needs: build_n_test
     steps:
       - uses: actions/checkout@v2
