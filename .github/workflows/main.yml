@@ -48,18 +48,18 @@ jobs:
       - name: scp
         uses: appleboy/scp-action@master
         env:
-          host: 188.120.240.141
-          username: root
-          key: ${{ secrets.SERVER_PASSWORD }}
+          HOST: 188.120.240.141
+          USERNAME: root
+          KEY: ${{ secrets.SERVER_PASSWORD }}
         with:
           source: app.zip
           target: /root/statzilla_mm_app
       - name: ssh
         uses: appleboy/ssh-action@master
         env:
-          host: 188.120.240.141
-          username: root
-          key: ${{ secrets.SERVER_PASSWORD }}
+          HOST: 188.120.240.141
+          USERNAME: root
+          KEY: ${{ secrets.SERVER_PASSWORD }}
         with:
           script: statzilla_mm_app./deploy.bash
       
