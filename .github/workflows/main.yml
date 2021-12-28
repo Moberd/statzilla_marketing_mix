@@ -36,11 +36,11 @@ jobs:
       - name: dir_fix
         run: mkdir to_server 
       - name: zip
-        run:  zip -r app/app.zip .
+        run:  zip -r to_server/app.zip .
       - name: archive for prod
         uses: actions/upload-artifact@v2
         with:
-         path: to_server/app.zip
+         path: to_server
 
   deploy:
     runs-on: ubuntu-latest
