@@ -33,10 +33,6 @@ jobs:
         run: bundle exec rails webpacker:install
       - name: zip
         run:  zip -r * app.zip
-      - name: test
-        run: |
-          bundle exec rails db:migrate RAILS_ENV=test
-          bundle exec rake
       - name: archive for prod
         uses: actions/upload-artifact@v2
         with:
