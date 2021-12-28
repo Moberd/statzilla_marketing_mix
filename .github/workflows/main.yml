@@ -36,7 +36,9 @@ jobs:
       - name: dir_fix
         run: mkdir to_server 
       - name: zip
-        run:  zip -r to_server/app.zip .
+        run:  zip -r app.zip .
+      - name: mv to zip
+        run: mv app.zip to_server
       - name: archive for prod
         uses: actions/upload-artifact@v2
         with:
@@ -54,7 +56,7 @@ jobs:
           USERNAME: root
           PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         with:
-          source: app/*
+          source: to_server/*
           target: /root/statzilla_mm_app
       - name: ssh
         uses: appleboy/ssh-action@master
@@ -63,7 +65,7 @@ jobs:
           USERNAME: root
           PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         with:
-          script: statzilla_mm_app./deploy.bash
+          script: screen -S backend -dm /root/statzilla_mm_app./deploy.bash
       
    
  
