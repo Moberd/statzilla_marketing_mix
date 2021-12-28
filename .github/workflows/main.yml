@@ -41,11 +41,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
          path: app.zip
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: install sshpass
-      - run: apt install sshpass
+
 
    
        
