@@ -46,10 +46,7 @@ jobs:
     steps:
       - name: install sshpass
       - run: apt install sshpass
-      - name: scp to server
-      - run: sshpass -p {{secrets.SERVER_PASSWORD}} scp root@188.120.240.141:/root/statzilla_mm_app
-      - name: ssh run deploy
-      - run: sshpass -p {{secrets.SERVER_PASSWORD}} ssh root@188.120.240.141 "statzilla_mm_app./deploy.bash"
+
    
        
 
