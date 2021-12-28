@@ -27,6 +27,20 @@ jobs:
           ruby-version: 3.0.2
           bundler-cache: true
       - name: build
-        run: ls
+        run: |
+          bundler install
+          bundle exec rails db:migrate
+          bundle exec rails webpacker:install
+          zip -r app.zip
+      - name: test
+        run: bundle exec rake
+      - name: archive for prod
+        uses: actions/upload-artifact@v2
+        with:
+         path: app.zip
+      - name: check exists
+        run: echo -f app.zip
+   
+       
 
         
