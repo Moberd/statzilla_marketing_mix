@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: test
-        run: echo ${{secrets.TEST}}
+        run: echo "HELLO"
       - name: setup_ruby
         uses: ruby/setup-ruby@v1
         with:
