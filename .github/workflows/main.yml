@@ -44,8 +44,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-      - uses: actions/checkout@v2
       - name: install sshpass
       - run: apt install sshpass
       - name: scp to server
