@@ -44,14 +44,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: install ssh sshpass 
-        uses: matheusvanzan/sshpass-action@v1
+        uses: appleboy/ssh-action@master
         with:
           host: 188.120.240.141
           username: root
           password: ${{secrets.SERVER_PASSWORD}}
-        run: |
-          scp root@188.120.240.141:/root/statzilla_mm_app
-          ssh root@188.120.240.141 "statzilla_mm_app./deploy.bash"
+          script: |
+            scp root@188.120.240.141:/root/statzilla_mm_app
+            ssh root@188.120.240.141 "statzilla_mm_app./deploy.bash"
    
        
 
