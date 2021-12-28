@@ -39,12 +39,14 @@ jobs:
          path: app.zip
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: alpine-latest
     needs: build_n_test
     steps:
       - uses: actions/checkout@v2
-      - name: install sshpass
-        run: apt install sshpass
+      - name: install ssh sshpass 
+        run: |
+         apk add openssh-client
+         apk add sshpass
       - name: scp to server
         run: sshpass -p {{secrets.SERVER_PASSWORD}} scp root@188.120.240.141:/root/statzilla_mm_app
       - name: ssh run deploy
