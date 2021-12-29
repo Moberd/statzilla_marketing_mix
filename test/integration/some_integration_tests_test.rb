@@ -1,4 +1,4 @@
-require_relative 'test_helper.rb'
+require_relative '../test_helper.rb'
 
 class SomeIntegrationTest < ActionDispatch::IntegrationTest
   test "First page loads" do
