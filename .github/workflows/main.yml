@@ -37,7 +37,7 @@ jobs:
         run: mkdir to_server 
       - name: zip
         run:  zip -r app.zip .
-      - name: test
+      - name: run rake tests
         run: |
           bundle exec rails db:migrate RAILS_ENV=test
           bundle exec rake test
