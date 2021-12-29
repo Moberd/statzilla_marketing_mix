@@ -68,6 +68,9 @@ jobs:
         with:
           source: app.zip
           target: /root/statzilla_mm_app
+          rm: true
+          strip_components: 1
+          overwrite: true
       - name: ssh
         uses: appleboy/ssh-action@master
         env:
