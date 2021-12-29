@@ -71,7 +71,7 @@ jobs:
           USERNAME: root
           PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         with:
-          script: screen -S backend -dm /root/statzilla_mm_app/deploy.bash
+          script: /root/statzilla_mm_app/deploy.bash
       
    
  
