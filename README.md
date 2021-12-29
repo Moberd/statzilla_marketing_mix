@@ -1,13 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
+HELLO ANTON
 application up and running.
 
 Things you may want to cover:
 
 * Ruby version
 
-* System dependencies
+* System dependencies ttt
 
 * Configuration
 
