@@ -40,7 +40,7 @@ jobs:
       - name: test
         run: |
           bundle exec rails db:migrate RAILS_ENV=test
-          bundle exec rake
+          bundle exec rake test
       - name: mv to zip
         run: mv app.zip to_server
       - name: archive for prod
