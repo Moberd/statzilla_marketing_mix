@@ -68,7 +68,7 @@ jobs:
         with:
           source: app.zip
           target: /root/statzilla_mm_app
-          rm: true
+          rm: false
           strip_components: 1
           overwrite: true
       - name: ssh
