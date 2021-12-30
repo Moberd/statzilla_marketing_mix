@@ -71,7 +71,17 @@ jobs:
         with:
           script: |
             cd /root/statzilla_mm_app/
-            ./deploy.bash
+            rm -rf app_tmp/*
+            mv app.zip app_tmp
+            cd app_tmp
+            unzip -o app.zip
+            bundle install
+            cd ..
+            kill -9 $(lsof -i tcp:3000 -t)
+            rm -rf app/*
+            mv app_tmp/* app/
+            cd app
+            bundle exec rails server --daemon
       
    
  
