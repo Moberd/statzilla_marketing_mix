@@ -75,6 +75,7 @@ jobs:
             mv app.zip app_tmp
             cd app_tmp
             unzip -qqo app.zip
+            bundle install
             cd ..
             kill -9 $(lsof -i tcp:3000 -t)
             rm -rf app/*
@@ -82,7 +83,7 @@ jobs:
             cd app
             ruby -v
             gem query --local
-            rails server --daemon
+            bundle exec rails server --daemon
       
    
  
