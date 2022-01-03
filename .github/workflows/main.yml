@@ -70,18 +70,19 @@ jobs:
           PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         with:
           script: |
-            gem install bundler
             cd /root/statzilla_mm_app/
             rm -rf app_tmp/*
             mv app.zip app_tmp
             cd app_tmp
             unzip -o app.zip
+            gem install bundler
             bundle install
             cd ..
             kill -9 $(lsof -i tcp:3000 -t)
             rm -rf app/*
             mv app_tmp/* app/
             cd app
+            gem install bundler
             bundle exec rails server --daemon
       
    
