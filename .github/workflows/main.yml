@@ -70,6 +70,7 @@ jobs:
           PASSWORD: ${{ secrets.SERVER_PASSWORD }}
         with:
           script: |
+            gem install bundler
             cd /root/statzilla_mm_app/
             rm -rf app_tmp/*
             mv app.zip app_tmp
