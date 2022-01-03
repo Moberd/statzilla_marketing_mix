@@ -80,6 +80,8 @@ jobs:
             rm -rf app/*
             mv app_tmp/* app/
             cd app
+            ruby -v
+            gem query --local
             rails server --daemon
       
    
