@@ -75,12 +75,14 @@ jobs:
             mv app.zip app_tmp
             cd app_tmp
             unzip -qqo app.zip
+            rbenv local 3.0.2
             bundle install
             cd ..
             kill -9 $(lsof -i tcp:3000 -t)
             rm -rf app/*
             mv app_tmp/* app/
             cd app
+            rbenv local 3.0.2
             ruby -v
             gem query --local
             bundle exec rails server --daemon
