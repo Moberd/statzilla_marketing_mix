@@ -81,6 +81,7 @@ jobs:
             rm -rf app/*
             mv app_tmp/* app/
             cd app
+            ls -alh
             bundle exec rails server --daemon
       
    
