@@ -22,8 +22,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-      - name: test
-        run: echo ${{ secrets.TEST }}
       - name: setup_ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -73,7 +71,9 @@ jobs:
         with:
           script: |
             cd /root/statzilla_mm_app/
-            ./deploy.bash
+            bash -i deploy.bash
+          
+      
       
    
  
