@@ -33,9 +33,7 @@ class XlsFormsController < ApplicationController
     file_extension = File.extname(@xls_form.file.filename.to_s)
     if ['.csv', '.xls', '.xlsx'].include?(file_extension)
       flag = system " python3.9 #{Rails.root.to_s}/bin/market_mix_script.py #{path} #{user_email} #{ts} #{Rails.root.to_s} #{file_extension}"
-      if flag
-        "#{user_email}.#{ts}.pdf"
-      end
+      "#{user_email}.#{ts}.pdf" if flag
     end
   end
 
